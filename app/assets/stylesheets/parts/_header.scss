@@ -1,0 +1,42 @@
+*{
+  box-sizing: border-box;
+}
+
+.main-header{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  
+  height: 100px;
+  width: 100vw;
+  background-color: $maincolor-green;
+
+  &__logo{
+    a{
+      font-size: 45px;
+      text-decoration: none;
+      color: $white;
+    }
+  }
+
+  &__user-name{
+    // font-size: 25px;
+    text-decoration: none;
+    color: $white;
+  }
+
+  .header-function{
+    display: flex;
+    justify-content: space-around;
+    width: 200px;
+    
+    a{
+      color: $white;
+      text-decoration: none;
+    }
+
+  }
+}
+
+

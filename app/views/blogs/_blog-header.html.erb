@@ -1,0 +1,29 @@
+<div　class = 'header'>
+  <div class= 'main-header'>
+    <div class = 'main-header__logo'>
+      <%= link_to 'Blog' ,root_path %>
+    </div>
+    <div class = 'main-header__user-name'>
+      <% if !user_signed_in? %>
+        ゲストさん、いらっしゃい！
+      <% else %>
+        <%= current_user.name %>さん、ごゆるりと〜
+      <% end %>
+    </div>
+    <ul class = 'header-function'>
+      <%# ユーザーがサインインしている婆に表示する  %>
+      <% if !user_signed_in? %>
+      <li class = 'header-function__sign-in'>
+        <%= link_to 'SignIn' ,new_user_session_path %>
+      </li>
+      <% else %>
+      <li class = 'header-function__signOut'>
+        <%= link_to 'SignOut' ,destroy_user_session_path, method: :delete %>
+      </li>
+      <li class = 'header-function__create-blog'>
+        <%= link_to 'New' , new_blog_path%>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

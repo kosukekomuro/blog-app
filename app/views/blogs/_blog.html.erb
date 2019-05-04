@@ -1,0 +1,22 @@
+<div class = 'blog'>
+  <div class = 'blog__text'>
+    <p>投稿者 : <%= blog.user.name%></p>
+    <p>タイトル : <%= blog.title%></p>
+    <%= blog.content%>
+  </div>
+  <%# ユーザーがサインインしている場合と  %>
+  <%# ユーザーがサインインいているidとブログを作成したユーザーidが一致している場合に表示する  %>
+  <%if user_signed_in? && current_user.id == blog.user_id%>
+    <ul class = 'blog-function'>
+      <%# <li class = 'blog-function__show'>
+        <%= link_to 'Show' %>
+      <%# </li>  %>
+      <li class = 'blog-function__edit'>
+        <%= link_to 'Edit', edit_blog_path(blog)%>
+      </li>
+      <li class = 'blog-function__destroy'>
+        <%= link_to 'Destroy', blog_path(blog), method: :delete, data: { confirm: 'Really?'} %>
+      </li>
+    </ul>
+  <%end%>
+</div>

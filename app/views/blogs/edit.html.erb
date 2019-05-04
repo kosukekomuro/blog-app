@@ -1,0 +1,15 @@
+<%= render "blog-header"%>
+<div class = 'contents'>
+  <%= form_for (@blog), html: {class: 'new-blog'} do |f|%>
+    <h2>ブログを投稿してください</h2>
+    <div class = new-blog__title>
+      <%= f.label :タイトル %><br>
+      <%= f.text_field :title, class: 'new-blog__title__input'%>
+    </div>
+    <div class = new-blog__content>
+      <%= f.label :ブログ %><br>
+      <%= f.text_area :content, class: 'new-blog__content__input' %>
+    </div>
+    <%= f.submit '送信', class: 'new-blog__submit-btn'%>
+  <%end%>
+</div>
