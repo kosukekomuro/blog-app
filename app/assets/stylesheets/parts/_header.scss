@@ -21,9 +21,12 @@
   }
 
   &__user-name{
-    // font-size: 25px;
     text-decoration: none;
     color: $white;
+
+    span{
+      font-size: 30px
+    }
   }
 
   .header-function{

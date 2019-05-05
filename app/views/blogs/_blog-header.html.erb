@@ -4,7 +4,11 @@
       <%= link_to 'Blog' ,root_path %>
     </div>
     <div class = 'main-header__user-name'>
-      <% if !user_signed_in? %>
+      <%if request.url == "http://localhost:3000/users/sign_in" %>
+        <span>Sign in</span>
+      <% elsif request.url == "http://localhost:3000/users/sign_up" %>
+        <span>Sign up</span>
+      <% elsif !user_signed_in? %>
         ゲストさん、いらっしゃい！
       <% else %>
         <%= current_user.name %>さん、ごゆるりと〜
@@ -12,11 +16,11 @@
     </div>
     <ul class = 'header-function'>
       <%# ユーザーがサインインしている婆に表示する  %>
-      <% if !user_signed_in? %>
+      <% if !user_signed_in? && !request.url.start_with?("http://localhost:3000/users")%>
       <li class = 'header-function__sign-in'>
         <%= link_to 'SignIn' ,new_user_session_path %>
       </li>
-      <% else %>
+      <% elsif user_signed_in? && !request.url.start_with?("http://localhost:3000/users")%>
       <li class = 'header-function__signOut'>
         <%= link_to 'SignOut' ,destroy_user_session_path, method: :delete %>
       </li>
