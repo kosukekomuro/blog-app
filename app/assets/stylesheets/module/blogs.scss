@@ -26,18 +26,30 @@
     }
 
     .blog-function{
-      width: 40%;
+      width: 250px;
       display: flex;
       justify-content: space-around;
 
-      li{
+      // li{
+      //   padding: 10px 20px;
+      //   background-color: $maincolor-green;
+      //   border-radius: 10px;
+      //   color: $white;
+
+      a{
+        display: block;
         padding: 10px 20px;
         background-color: $maincolor-green;
         border-radius: 10px;
+        color: $white;
+        text-decoration: none;
 
-        a{
-          color: $white;
-          text-decoration: none;
+        &:hover{
+          background-color: $white;
+          color: $maincolor-green;
+          border: solid 1px $maincolor-green;
+          padding: 9px 19px;
+          
         }
       }
     }
